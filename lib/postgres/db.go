@@ -2,10 +2,15 @@ package postgres
 
 import (
 	"database/sql"
+
+	_ "github.com/lib/pq"
 )
 
-var Database *sql.DB
+func InitDB(connStr string) (*sql.DB, error) {
+	db, err := sql.Open("postgres", connStr)
+	if err != nil {
+		return nil, err
+	}
 
-func InitDB() {
-	print("todo!")
+	return db, err
 }
