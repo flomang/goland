@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS links(
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    title VARCHAR (255),
+    address VARCHAR (255) ,
+    user_id UUID NOT NULL REFERENCES users (id),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
+);
