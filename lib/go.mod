@@ -1,4 +1,4 @@
-module example.com/hello
+module github.com/flowmang/goland/lib
 
 go 1.19
 
