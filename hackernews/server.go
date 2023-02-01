@@ -5,8 +5,6 @@ import (
 	"net/http"
 	"os"
 
-	"lib/postgres"
-
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/playground"
 	"github.com/flomang/goland/hackernews/graph"
@@ -20,7 +18,7 @@ func main() {
 		port = defaultPort
 	}
 
-	postgres.InitDB()
+	lib.postgres.InitDB()
 
 	srv := handler.NewDefaultServer(graph.NewExecutableSchema(graph.Config{Resolvers: &graph.Resolver{}}))
 

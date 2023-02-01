@@ -1,4 +1,4 @@
-module github.com/flowmang/goland/lib
+module github.com/flomang/goland/lib
 
 go 1.19
 
